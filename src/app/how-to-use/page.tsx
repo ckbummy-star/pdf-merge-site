@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "이용방법",
   description:
     "PDF 병합 및 분리 서비스 이용방법을 안내합니다. 파일 업로드부터 순서 변경, 병합, 분리, 다운로드까지 쉽게 따라 하세요.",
+  alternates: { canonical: "/how-to-use" },
 };
 
 const splitSteps = [

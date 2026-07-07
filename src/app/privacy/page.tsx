@@ -4,6 +4,7 @@ import { SITE_NAME } from "@/lib/site";
 export const metadata: Metadata = {
   title: "개인정보처리방침",
   description: `${SITE_NAME} 개인정보처리방침. 업로드하신 파일은 서버에 저장되지 않으며, 모든 처리는 사용자의 브라우저 내에서만 이루어집니다.`,
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

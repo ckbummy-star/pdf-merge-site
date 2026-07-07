@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "자주 묻는 질문",
   description:
-    "PDF 병합 서비스에 대해 자주 묻는 질문과 답변을 확인하세요. 개인정보 보호, 파일 용량, 지원 형식 등을 안내합니다.",
+    "PDF 병합·분리 서비스에 대해 자주 묻는 질문과 답변을 확인하세요. 개인정보 보호, 파일 용량, 지원 형식 등을 안내합니다.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [
@@ -49,9 +51,23 @@ const faqs = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export default function FaqPage() {
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-10 sm:py-16">
+      <JsonLd data={faqJsonLd} />
       <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
         자주 묻는 질문
       </h1>

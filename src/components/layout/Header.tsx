@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS, SITE_NAME } from "@/lib/site";
+import { HEADER_LINKS, SITE_NAME } from "@/lib/site";
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
           {SITE_NAME}
         </Link>
         <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-medium text-gray-500 sm:gap-6">
-          {NAV_LINKS.slice(1).map((link) => (
+          {HEADER_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
